@@ -7,7 +7,7 @@ export const FILTER_ORIGIN = "FILTER_ORIGIN";
 export const FILTER_TEMPERAMENT = "FILTER_TEMPERAMENT";
 export const ORDER = "ORDER";
 export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
-export const URL_BASE = "https://pi-dogs-main-api.onrender.com";
+export const URL_BASE = "https://henry-dogs-api-kdug.onrender.com";
 
 export const getDogsAll = () => {
   return function (dispach) {
