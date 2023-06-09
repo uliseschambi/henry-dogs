@@ -144,7 +144,7 @@ export default function Form() {
       name: formData.name.value,
       height: `${formData.minHeight.value} - ${formData.maxHeight.value}`,
       weight: `${formData.minWeigth.value} - ${formData.maxWeigth.value}`,
-      life_span: `${formData.minLive.value} - ${formData.maxLive.value}`,
+      life_span: `${formData.minLive.value} - ${formData.maxLive.value} years`,
       image: formData.image.value,
       temperaments: formData.temperaments.value.map((t) => t.name),
     };
