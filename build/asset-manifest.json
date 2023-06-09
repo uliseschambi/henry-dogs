@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/henry-dogs/static/css/main.b70a2bb6.chunk.css",
+    "main.js": "/henry-dogs/static/js/main.5fad36ee.chunk.js",
+    "main.js.map": "/henry-dogs/static/js/main.5fad36ee.chunk.js.map",
+    "runtime-main.js": "/henry-dogs/static/js/runtime-main.6cc41fca.js",
+    "runtime-main.js.map": "/henry-dogs/static/js/runtime-main.6cc41fca.js.map",
+    "static/js/2.20846b30.chunk.js": "/henry-dogs/static/js/2.20846b30.chunk.js",
+    "static/js/2.20846b30.chunk.js.map": "/henry-dogs/static/js/2.20846b30.chunk.js.map",
+    "index.html": "/henry-dogs/index.html",
+    "static/css/main.b70a2bb6.chunk.css.map": "/henry-dogs/static/css/main.b70a2bb6.chunk.css.map",
+    "static/js/2.20846b30.chunk.js.LICENSE.txt": "/henry-dogs/static/js/2.20846b30.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/henry-dogs/static/media/RobotoMono-VariableFont_wght.46629fbb.woff2",
+    "static/media/dog.6ba0669f.png": "/henry-dogs/static/media/dog.6ba0669f.png",
+    "static/media/email.3e044a1f.svg": "/henry-dogs/static/media/email.3e044a1f.svg",
+    "static/media/github.22861d02.svg": "/henry-dogs/static/media/github.22861d02.svg",
+    "static/media/linkedin.2943a06e.svg": "/henry-dogs/static/media/linkedin.2943a06e.svg",
+    "static/media/video.59892ec9.mp4": "/henry-dogs/static/media/video.59892ec9.mp4"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6cc41fca.js",
+    "static/js/2.20846b30.chunk.js",
+    "static/css/main.b70a2bb6.chunk.css",
+    "static/js/main.5fad36ee.chunk.js"
+  ]
+}

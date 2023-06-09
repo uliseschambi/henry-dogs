@@ -9,7 +9,7 @@ function LandingPage() {
         {/* etiqueta video funciona usando import, variable y atributos muted y autoPlay(P mayúscula) */}
         <source src={video} type="video/mp4" />
       </video>
-      <Link to="/PI-Dogs-main-client/home" className={style.button}>
+      <Link to="/henry-dogs/home" className={style.button}>
         HENRY DOGS
       </Link>
     </div>
