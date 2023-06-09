@@ -9,20 +9,20 @@ import Footer from "./components/Footer";
 function App() {
   const { pathname } = useLocation();
 
-  return pathname === "/henry-dogs/" ? (
-    <Route path="/henry-dogs/">
+  return pathname === "/" ? (
+    <Route path="/">
       <LandingPage />
     </Route>
   ) : (
     <>
       <Nav />
-      <Route exact path="/henry-dogs/home">
+      <Route exact path="/home">
         <Home />
       </Route>
-      <Route exact path="/henry-dogs/form">
+      <Route exact path="/form">
         <Form />
       </Route>
-      <Route exact path="/henry-dogs/dog/:id">
+      <Route exact path="/dog/:id">
         <Detail />
       </Route>
       <Footer />

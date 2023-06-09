@@ -53,7 +53,7 @@ const Pagination = ({ dogs }) => {
 
       <div className={style.cards}>
         {currentRecords.map((dog, id) => (
-          <Link key={dog.id} to={`/henry-dogs/dog/${dog.id}`}>
+          <Link key={dog.id} to={`/dog/${dog.id}`}>
             <Dog
               name={dog.name}
               temperament={dog.temperament}

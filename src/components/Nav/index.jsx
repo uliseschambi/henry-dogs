@@ -7,16 +7,16 @@ import { StyledLink } from "./StyledLink";
 function Nav() {
   return (
     <header className={style.header}>
-      <NavLink to="/henry-dogs/home">
+      <NavLink to="/home">
         <div className={style.logo}>
           <img className={style.img} src={img} alt="dog icon" />
           <h1 className={style.title}>HENRY DOGS</h1>
         </div>
       </NavLink>
       <nav className={style.nav}>
-        <StyledLink to="/henry-dogs/home">INICIO</StyledLink>
+        <StyledLink to="/home">INICIO</StyledLink>
         {/* <StyledLink to="/favorite">FAVORITOS</StyledLink> */}
-        <StyledLink to="/henry-dogs/form">AGREGAR</StyledLink>
+        <StyledLink to="/form">AGREGAR</StyledLink>
       </nav>
     </header>
   );
