@@ -1,0 +1,78 @@
+.section {
+  min-height: 70vh;
+  width: 100%;
+  background-color: var(--light-brown);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  width: 80%;
+  margin: 30px;
+  border: 1px solid burlywood;
+  box-shadow: 3px 3px var(--medium-brown);
+}
+
+.searchInput {
+  width: 400px;
+  text-align: right;
+  color: #b17c54;
+  font-size: large;
+  border: 1px solid var(--dark-brown);
+}
+
+.searchInput:focus {
+  border-color: #ffe021;
+  outline: 2px solid #ffe021;
+}
+
+.searchButton {
+  all: unset; /* resetea(initial) los estilos que no son heredables. Aplica a cualquier tag */
+  cursor: pointer;
+  text-align: center;
+  background-color: var(--dark-brown);
+  color: white;
+  height: 30px;
+  width: 100px;
+  margin-left: 10px;
+}
+
+.searchButton:active {
+  background-color: #ffe021;
+  box-shadow: 0 0 10px #ffe021, 0 0 40px;
+}
+
+.filters {
+  width: 100%;
+  margin: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.select {
+  border: none;
+  appearance: none;
+  padding: 4px;
+  margin-top: 15px;
+  width: 200px;
+  color: white;
+  background-color: var(--dark-brown);
+}
+
+.label {
+  padding: 5px 0;
+  color: var(--dark-brown);
+  margin: 5px;
+}
+
+.loader {
+  position: relative;
+  height: 200px;
+}
