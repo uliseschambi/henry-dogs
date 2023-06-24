@@ -7,7 +7,8 @@ export const FILTER_ORIGIN = "FILTER_ORIGIN";
 export const FILTER_TEMPERAMENT = "FILTER_TEMPERAMENT";
 export const ORDER = "ORDER";
 export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
-export const URL_BASE = "henry-dogs-api-production-00.up.railway.app";
+export const URL_BASE =
+  "https://henry-dogs-api-production-00.up.railway.app";
 
 export const getDogsAll = () => {
   return function (dispach) {
