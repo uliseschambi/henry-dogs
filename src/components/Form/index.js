@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { getTemperaments, getDogsAll } from "../../redux/actions";
-import StyledDatalist from "./StyledDatalist";
-import validation from "./validation";
-import { URL_BASE } from "../../redux/actions";
-import styled from "styled-components";
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { getTemperaments, getDogs } from '../../redux/actions';
+import StyledDatalist from './StyledDatalist';
+import validation from './validation';
+import { URL_BASE } from '../../redux/actions';
+import styled from 'styled-components';
 
 const Section = styled.section`
   display: flex;
@@ -91,8 +91,7 @@ const StyledInput = styled.input`
 `;
 
 const ErrorMsg = styled.div`
-  visibility: ${(props) =>
-    !props.visibility ? "hidden" : "visible"};
+  visibility: ${props => (!props.visibility ? 'hidden' : 'visible')};
   font-size: 0.7rem;
   color: red;
   margin-bottom: 0.2rem;
@@ -100,18 +99,18 @@ const ErrorMsg = styled.div`
 
 export default function Form() {
   const dispatch = useDispatch();
-  const temperaments = useSelector((state) => state.temperaments);
+  const temperaments = useSelector(state => state.temperaments);
   const [buttonEnable, setButtonEnable] = useState(true);
   const [formChanged, setFormChanged] = useState(false); //flag para marcar si se modifica el form
   const formDataInitial = {
-    minHeight: { value: "", valid: false },
-    name: { value: "", valid: false },
-    maxHeight: { value: "", valid: false },
-    minWeigth: { value: "", valid: false },
-    maxWeigth: { value: "", valid: false },
-    minLive: { value: "", valid: true },
-    maxLive: { value: "", valid: true },
-    image: { value: "", valid: true },
+    minHeight: { value: '', valid: false },
+    name: { value: '', valid: false },
+    maxHeight: { value: '', valid: false },
+    minWeigth: { value: '', valid: false },
+    maxWeigth: { value: '', valid: false },
+    minLive: { value: '', valid: true },
+    maxLive: { value: '', valid: true },
+    image: { value: '', valid: true },
     temperaments: { value: [], valid: false },
   };
   const [formData, setFormData] = useState(formDataInitial);
@@ -125,7 +124,7 @@ export default function Form() {
     if (formChanged) {
       for (const prop in formData) {
         if (
-          formData[prop].hasOwnProperty("error") ||
+          formData[prop].hasOwnProperty('error') ||
           formData[prop].valid === false
         ) {
           setButtonEnable(true);
@@ -137,7 +136,7 @@ export default function Form() {
     // eslint-disable-next-line
   }, [formData]);
 
-  const handleForm = (event) => {
+  const handleForm = event => {
     event.preventDefault();
 
     const formToSend = {
@@ -146,19 +145,19 @@ export default function Form() {
       weight: `${formData.minWeigth.value} - ${formData.maxWeigth.value}`,
       life_span: `${formData.minLive.value} - ${formData.maxLive.value} years`,
       image: formData.image.value,
-      temperaments: formData.temperaments.value.map((t) => t.name),
+      temperaments: formData.temperaments.value.map(t => t.name),
     };
 
     // post de la nueva raza
     fetch(`${URL_BASE}/dog`, {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify(formToSend),
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     })
       .then(() => {
-        dispatch(getDogsAll()); // actualizo redux
+        dispatch(getDogs()); // actualizo redux
         alert(
           `La raza de perro ${formData.name.value} se agregó con éxito.`
         );
@@ -166,7 +165,7 @@ export default function Form() {
       })
       .catch(() => {
         alert(
-          "No pudo cargarse la raza de perro. Intentelo nuevamente por favor."
+          'No pudo cargarse la raza de perro. Intentelo nuevamente por favor.'
         );
       });
   };
@@ -182,18 +181,18 @@ export default function Form() {
           {/* IMPUT name */}
           <FormField>
             {formData.name.error ? (
-              <ErrorMsg visibility="true">
+              <ErrorMsg visibility='true'>
                 {formData.name.error}
               </ErrorMsg>
             ) : (
               <ErrorMsg>hidden</ErrorMsg>
             )}
             <StyledInput
-              type="text"
-              name="name"
-              placeholder="Nombre de la raza"
+              type='text'
+              name='name'
+              placeholder='Nombre de la raza'
               value={formData.name.value}
-              onChange={(e) => validation(e, formData, setFormData)}
+              onChange={e => validation(e, formData, setFormData)}
             />
           </FormField>
         </FormInfo>
@@ -201,35 +200,35 @@ export default function Form() {
           {/* IMPUT minHeight */}
           <FormField>
             {formData.minHeight.error ? (
-              <ErrorMsg visibility="true">
+              <ErrorMsg visibility='true'>
                 {formData.minHeight.error}
               </ErrorMsg>
             ) : (
               <ErrorMsg>hidden</ErrorMsg>
             )}
             <StyledInput
-              type="text"
-              name="minHeight"
-              placeholder="Altura mínima en cm"
+              type='text'
+              name='minHeight'
+              placeholder='Altura mínima en cm'
               value={formData.minHeight.value}
-              onChange={(e) => validation(e, formData, setFormData)}
+              onChange={e => validation(e, formData, setFormData)}
             />
           </FormField>
           -{/* IMPUT maxHeight */}
           <FormField>
             {formData.maxHeight.error ? (
-              <ErrorMsg visibility="true">
+              <ErrorMsg visibility='true'>
                 {formData.maxHeight.error}
               </ErrorMsg>
             ) : (
               <ErrorMsg>hidden</ErrorMsg>
             )}
             <StyledInput
-              type="text"
-              name="maxHeight"
-              placeholder="Altura máxima en cm"
+              type='text'
+              name='maxHeight'
+              placeholder='Altura máxima en cm'
               value={formData.maxHeight.value}
-              onChange={(e) => validation(e, formData, setFormData)}
+              onChange={e => validation(e, formData, setFormData)}
             />
           </FormField>
         </FormInfo>
@@ -237,35 +236,35 @@ export default function Form() {
           {/* IMPUT minWeigth */}
           <FormField>
             {formData.minWeigth.error ? (
-              <ErrorMsg visibility="true">
+              <ErrorMsg visibility='true'>
                 {formData.minWeigth.error}
               </ErrorMsg>
             ) : (
               <ErrorMsg>hidden</ErrorMsg>
             )}
             <StyledInput
-              type="text"
-              name="minWeigth"
-              placeholder="Peso mínimo en kg"
+              type='text'
+              name='minWeigth'
+              placeholder='Peso mínimo en kg'
               value={formData.minWeigth.value}
-              onChange={(e) => validation(e, formData, setFormData)}
+              onChange={e => validation(e, formData, setFormData)}
             />
           </FormField>
           - {/* IMPUT maxWeigth */}
           <FormField>
             {formData.maxWeigth.error ? (
-              <ErrorMsg visibility="true">
+              <ErrorMsg visibility='true'>
                 {formData.maxWeigth.error}
               </ErrorMsg>
             ) : (
               <ErrorMsg>hidden</ErrorMsg>
             )}
             <StyledInput
-              type="text"
-              name="maxWeigth"
-              placeholder="Peso máximo en kg"
+              type='text'
+              name='maxWeigth'
+              placeholder='Peso máximo en kg'
               value={formData.maxWeigth.value}
-              onChange={(e) => validation(e, formData, setFormData)}
+              onChange={e => validation(e, formData, setFormData)}
             />
           </FormField>
         </FormInfo>
@@ -273,41 +272,41 @@ export default function Form() {
           {/* IMPUT minLive */}
           <FormField>
             {formData.minLive.error ? (
-              <ErrorMsg visibility="true">
+              <ErrorMsg visibility='true'>
                 {formData.minLive.error}
               </ErrorMsg>
             ) : (
               <ErrorMsg>hidden</ErrorMsg>
             )}
             <StyledInput
-              type="text"
-              name="minLive"
-              placeholder="Años de vida mínimo"
+              type='text'
+              name='minLive'
+              placeholder='Años de vida mínimo'
               value={formData.minLive.value}
-              onChange={(e) => validation(e, formData, setFormData)}
+              onChange={e => validation(e, formData, setFormData)}
             />
           </FormField>
           -{/* IMPUT maxLive */}
           <FormField>
             {formData.maxLive.error ? (
-              <ErrorMsg visibility="true">
+              <ErrorMsg visibility='true'>
                 {formData.maxLive.error}
               </ErrorMsg>
             ) : (
               <ErrorMsg>hidden</ErrorMsg>
             )}
             <StyledInput
-              type="text"
-              name="maxLive"
-              placeholder="Años de vida máximo"
+              type='text'
+              name='maxLive'
+              placeholder='Años de vida máximo'
               value={formData.maxLive.value}
-              onChange={(e) => validation(e, formData, setFormData)}
+              onChange={e => validation(e, formData, setFormData)}
             />
           </FormField>
         </FormInfo>
         {/* IMPUT image */}
         {formData.image.error ? (
-          <ErrorMsg visibility="true">
+          <ErrorMsg visibility='true'>
             {formData.image.error}
           </ErrorMsg>
         ) : (
@@ -316,18 +315,18 @@ export default function Form() {
         <FormField>
           {
             <StyledInput
-              type="url"
-              name="image"
-              placeholder="URL de la imagen"
+              type='url'
+              name='image'
+              placeholder='URL de la imagen'
               value={formData.image.value}
-              onChange={(e) => validation(e, formData, setFormData)}
+              onChange={e => validation(e, formData, setFormData)}
             />
           }
         </FormField>
         {/* Datalist temperaments */}
         <DogsLabel>Temperamentos:</DogsLabel>
         {formData.temperaments.error ? (
-          <ErrorMsg visibility="true">
+          <ErrorMsg visibility='true'>
             {formData.temperaments.error}
           </ErrorMsg>
         ) : (
@@ -339,7 +338,7 @@ export default function Form() {
           setFormData={setFormData}
         />
         <BottomForm>
-          <ButtonSubmit type="submit" disabled={buttonEnable}>
+          <ButtonSubmit type='submit' disabled={buttonEnable}>
             Agregar
           </ButtonSubmit>
         </BottomForm>
