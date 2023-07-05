@@ -6,7 +6,7 @@ export const FILTER_ORIGIN = 'FILTER_ORIGIN';
 export const FILTER_TEMPERAMENT = 'FILTER_TEMPERAMENT';
 export const ORDER = 'ORDER';
 export const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
-export const URL_BASE = 'http://localhost:3001';
+export const URL_BASE = 'https://upset-blue-bracelet.cyclic.app';
 
 export const getDogs = name => {
   let url = `${URL_BASE}/dogs`;
