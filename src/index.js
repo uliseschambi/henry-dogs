@@ -5,6 +5,7 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store.js'; // si exporta por default, importa con cualquier nombre y sin llaves
+// comentario de prueba
 
 ReactDOM.render(
   <Provider store={store}>
