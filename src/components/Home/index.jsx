@@ -21,7 +21,7 @@ function Home() {
 
   useEffect(() => {
     if (!dogsOrigin.length) dispatch(getDogs());
-    dispatch(getTemperaments(dogsOrigin));
+    if (dogsOrigin.length) dispatch(getTemperaments(dogsOrigin));
     // eslint-disable-next-line
   }, [dogsOrigin]);
 
