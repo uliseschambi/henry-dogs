@@ -6,7 +6,7 @@ export const FILTER_ORIGIN = 'FILTER_ORIGIN';
 export const FILTER_TEMPERAMENT = 'FILTER_TEMPERAMENT';
 export const ORDER = 'ORDER';
 export const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
-export const URL_BASE = 'https://gentle-mittens-foal.cyclic.app';
+export const URL_BASE = 'https://henry-dogs.adaptable.app';
 
 export const getDogs = name => {
   let url = `${URL_BASE}/dogs`;
