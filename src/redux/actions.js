@@ -17,10 +17,10 @@ export const getDogs = name => {
       .then(dogs => {
         dispach({ type: GET_DOGS, payload: dogs });
       })
-      .catch(() => {
+      .catch(err => {
         if (name)
           alert('No hay raza de perro que contengan ese nombre.');
-        else alert('No pudo cargarse las razas de perros.');
+        else alert('No pudo cargarse las razas de perros.' + err);
       });
   };
 };
